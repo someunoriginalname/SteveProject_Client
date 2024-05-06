@@ -1,1 +1,23 @@
-<p>publishers works!</p>
+<h1>Publishers</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Iso2</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (publisher of publishers; track $index) {
+            <tr>
+                <td>
+                    <a [routerLink] = "['/publishers/',publisher.PublisherId]">
+                        {{ publisher.PublisherId }}
+                    </a>
+                </td>
+                <td>{{ publisher.PublisherName }}</td>
+                <td>{{ publisher.PublisherYear }}</td>
+            </tr>
+        }
+    </tbody>
+</table>
