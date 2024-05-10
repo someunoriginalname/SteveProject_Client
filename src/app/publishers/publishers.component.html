@@ -4,19 +4,19 @@
         <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Iso2</th>
+            <th>Year</th>
         </tr>
     </thead>
     <tbody>
         @for (publisher of publishers; track $index) {
             <tr>
                 <td>
-                    <a [routerLink] = "['/publishers/',publisher.PublisherId]">
-                        {{ publisher.PublisherId }}
+                    <a [routerLink] = "['/publishers/', publisher.publisherId]">
+                        {{ publisher.publisherId }}
                     </a>
                 </td>
-                <td>{{ publisher.PublisherName }}</td>
-                <td>{{ publisher.PublisherYear }}</td>
+                <td>{{ publisher.publisherName }}</td>
+                <td>{{ publisher.publisherYear }}</td>
             </tr>
         }
     </tbody>
