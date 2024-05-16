@@ -2,10 +2,11 @@ import { HttpErrorResponse, HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { AuthService } from './auth.service';
 import { catchError, throwError } from 'rxjs';
-import { error } from 'console';
 import { Router } from '@angular/router';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
+  console.log("In the interceptor!");
+  console.log(req);
   const authService = inject(AuthService);
   const router = inject(Router);
   const authToken = authService.getToken();
@@ -22,6 +23,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
       if(error instanceof HttpErrorResponse && error.status === 401){
         router.navigate(['login'])
       }
+      console.log(authToken);
       return throwError(() => error);
     })
   );

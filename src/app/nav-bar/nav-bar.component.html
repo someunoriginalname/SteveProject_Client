@@ -5,14 +5,15 @@
       </button>
 
       <a  mat-flat-button color="primary" [routerLink]="['/publishers']">Publishers</a>
-      <a *ngIf="!isLoggedIn" mat-flat-button color="primary"
-    [routerLink]="['/login']">
-  Login
-</a>
-      <a *ngIf="isLoggedIn" mat-flat-button color="primary"
-    (click)="onLogout()">
-  Logout
-    </a>
+      <a  mat-flat-button color="primary" [routerLink]="['/sales']">Sales</a>
+
+      
       <span class="separator"></span>
+      @if(isLoggedIn){
+        <a mat-flat-button color="primary"(click)="onLogOut()">Logout</a>
+      }
+      @else{
+      <a mat-flat-button color="primary" [routerLink]="['/login']">Login</a>
+      }
   </mat-toolbar>
 </header>
