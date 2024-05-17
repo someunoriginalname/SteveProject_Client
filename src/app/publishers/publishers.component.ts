@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Publisher } from './publisher';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 import { RouterLink } from '@angular/router';
 
 @Component({

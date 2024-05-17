@@ -23,7 +23,7 @@
       </ng-container>
       <ng-container matColumnDef="revenue">
         <th mat-header-cell *matHeaderCellDef>Revenue</th>
-        <td mat-cell *matCellDef="let Game">{{Game.revenue}}</td>
+        <td mat-cell *matCellDef="let Game">${{Game.revenue}}</td>
       </ng-container>
       <ng-container matColumnDef="year">
         <th mat-header-cell *matHeaderCellDef>Year</th>
